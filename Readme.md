@@ -51,15 +51,12 @@ A comprehensive AI-powered video proctoring solution for secure online interview
 2. **Install dependencies**
    \`\`\`bash
    npm install
-   # or
-   yarn install
    \`\`\`
 
 3. **Start the development server**
    \`\`\`bash
    npm run dev
-   # or
-   yarn dev
+
    \`\`\`
 
 4. **Access the application**
@@ -93,84 +90,12 @@ A comprehensive AI-powered video proctoring solution for secure online interview
    - Export reports in PDF, CSV, or JSON format
    - Use batch processing for multiple sessions
 
-## 📊 API Documentation
-
-### Sessions API
-
-#### Create Session
-\`\`\`http
-POST /api/sessions
-Content-Type: application/json
-
-{
-  "candidateName": "John Doe",
-  "candidateEmail": "john@example.com",
-  "interviewType": "Technical Interview"
-}
-\`\`\`
-
-#### Get Session
-\`\`\`http
-GET /api/sessions/{sessionId}
-\`\`\`
-
-### Events API
-
-#### Log Event
-\`\`\`http
-POST /api/events
-Content-Type: application/json
-
-{
-  "sessionId": "session-123",
-  "type": "focus_lost",
-  "severity": "medium",
-  "description": "Candidate looked away from screen",
-  "metadata": {
-    "duration": 7000,
-    "direction": "left"
-  }
-}
-\`\`\`
-
-### Reports API
-
-#### Generate Report
-\`\`\`http
-GET /api/reports/{sessionId}?format=pdf
-\`\`\`
-
-#### Batch Reports
-\`\`\`http
-POST /api/reports/batch
-Content-Type: application/json
-
-{
-  "sessionIds": ["session-1", "session-2"],
-  "format": "csv"
-}
-\`\`\`
-
 ## 🔧 Configuration
 
 ### Environment Variables
 
 Create a `.env.local` file in the root directory:
 
-\`\`\`env
-# Optional: Database connection (if replacing in-memory storage)
-DATABASE_URL=postgresql://username:password@localhost:5432/proctoring
-
-# Optional: Email service for report delivery
-SMTP_HOST=smtp.gmail.com
-SMTP_PORT=587
-SMTP_USER=your-email@gmail.com
-SMTP_PASS=your-app-password
-
-# Optional: File storage for video recordings
-STORAGE_PROVIDER=local
-STORAGE_PATH=./uploads
-\`\`\`
 
 ### Detection Sensitivity
 
